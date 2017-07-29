@@ -8,15 +8,15 @@ import java.util.Date;
  */
 public class Workorder {
     private Integer id;//工单编号
-    private Project project;//项目编号
+    private Integer projectId;//项目编号
     private String executor;//执行人
     private String description;//任务描述
     private Integer orderLevel;//工单级别
     private Date createDate;//创建时间
 
-    public Workorder(Integer id, Project project, String executor, String description, Integer orderLevel, Date createDate) {
+    public Workorder(Integer id, Integer projectId, String executor, String description, Integer orderLevel, Date createDate) {
         this.id = id;
-        this.project = project;
+        this.projectId = projectId;
         this.executor = executor;
         this.description = description;
         this.orderLevel = orderLevel;
@@ -34,12 +34,12 @@ public class Workorder {
         this.id = id;
     }
 
-    public Project getProject() {
-        return project;
+    public Integer getProjectId() {
+        return projectId;
     }
 
-    public void setProject(Project project) {
-        this.project = project;
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
     }
 
     public String getExecutor() {
@@ -78,7 +78,7 @@ public class Workorder {
     public String toString() {
         return "Workorder{" +
                 "id=" + id +
-                ", project=" + project +
+                ", projectId=" + projectId +
                 ", executor='" + executor + '\'' +
                 ", description='" + description + '\'' +
                 ", orderLevel=" + orderLevel +

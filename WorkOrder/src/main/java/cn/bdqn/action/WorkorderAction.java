@@ -1,5 +1,6 @@
 package cn.bdqn.action;
 
+import cn.bdqn.bean.Project;
 import cn.bdqn.bean.Workorder;
 import cn.bdqn.service.WorkorderService;
 import com.opensymphony.xwork2.ActionSupport;
@@ -14,6 +15,15 @@ public class WorkorderAction extends ActionSupport {
     private WorkorderService workorderService;
     private List<Workorder> workorders;
     private Workorder workorder;
+    private Project project;
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
 
     public Workorder getWorkorder() {
         return workorder;
@@ -44,8 +54,10 @@ public class WorkorderAction extends ActionSupport {
      * @return
      */
     public String add(){
+        System.out.println(workorder.getProjectId());
         workorder.setCreateDate(new Date());
         workorderService.add(workorder);
+        System.out.println(1111);
         return SUCCESS;
     }
 
@@ -55,6 +67,9 @@ public class WorkorderAction extends ActionSupport {
      */
     public String find(){
         workorders=workorderService.findList();
+        return SUCCESS;
+    }
+    public String temp(){
         return SUCCESS;
     }
 }

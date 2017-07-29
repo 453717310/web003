@@ -11,7 +11,7 @@
             </generator>
         </id>
         <property name="projectName"/>
-        <set name="workorders" inverse="true" lazy="false">
+        <set name="workorders" inverse="true" lazy="false" cascade="all">
             <key column="PROJECTID"/>
             <one-to-many class="Workorder"/>
         </set>

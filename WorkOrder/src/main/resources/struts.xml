@@ -8,12 +8,14 @@
     <constant name="struts.devMode" value="true"/>
     <package name="default" namespace="/" extends="struts-default">
         <!--每次请求都会实例化一个对象 需要让spring容器去处理-->
-        <action name="findProject" class="projectAction" method="findList">
-            <result name="success">/findList.jsp</result>
-        </action>
+
 
         <action name="addWorkorder" class="workorderAction" method="add">
             <result name="success">/fingWorkorderList.jsp</result>
         </action>
+        <action name="tempWork" class="workorderAction" method="temp">
+            <result name="success">/addWorkorder.jsp</result>
+        </action>
     </package>
+    <include file="project.xml"></include>
 </struts>

@@ -11,10 +11,11 @@
             </generator>
         </id>
         <property name="executor"/>
+        <property name="projectId"/>
         <property name="createDate"/>
         <property name="description"/>
         <property name="orderLevel"/>
-        <many-to-one name="project" column="PROJECTID" class="Project"/>
+        <!--<many-to-one name="project" column="PROJECTID" class="Project"/>-->
 
     </class>
 </hibernate-mapping>

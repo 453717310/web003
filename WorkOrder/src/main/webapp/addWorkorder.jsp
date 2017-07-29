@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: dll
@@ -58,16 +59,18 @@
 <!-- The fav icon -->
 <link rel="shortcut icon" href="img/favicon.ico">
 <body>
+${project.id}
             <form class="form-horizontal" action="/addWorkorder" method="post">
+                <input type="hidden" name="workorder.projectId" value="${project.id}">
                     <div class="row-fluid">
                         <div class="span12 center  login-header">
                             <h2>添加工单</h2>
                         </div><!--/span-->
                     </div><!--/row-->
                     <div class="control-group">
-                        <label class="control-label" for="excutor">执行人(*)</label>
+                        <label class="control-label" for="executor">执行人(*)</label>
                         <div class="controls">
-                            <input class="input-xlarge focused" id="excutor" name="workorder.excutor" type="text" value="">
+                            <input class="input-xlarge focused" id="executor" name="workorder.executor" type="text" value="">
                         </div>
                     </div>
                     <div class="control-group">
@@ -80,9 +83,9 @@
                         <label class="control-label" for="orderLevel">级别</label>
                         <div class="controls">
                             <select id="orderLevel" name="workorder.orderLevel" >
-                                <option>1级</option>
-                                <option>2级</option>
-                                <option>3级</option>
+                                <option value=1>1级</option>
+                                <option value=2>2级</option>
+                                <option value=3>3级</option>
                             </select>
                         </div>
                     </div>
@@ -91,7 +94,7 @@
                     </div>
             </form>
 
-
+<s:debug></s:debug>
 
 
 <!-- jQuery -->

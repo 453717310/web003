@@ -70,14 +70,14 @@
                 <div class="alert alert-info">
                    企业工单管理系统
                 </div>
-                <form class="form-horizontal" action="/addWorkorder.jsp" method="post">
+                <form class="form-horizontal" action="/tempWork" method="post">
                     <fieldset>
                         <div class="control-group">
                             <label class="control-label" for="projectName">选择项目</label>
                             <div class="controls">
-                                <select id="projectName" name="project.projectName">
+                                <select id="projectName" name="project.id">
                                     <c:forEach items="${list}" var="project" varStatus="g">
-                                        <option>${project.projectName}</option>
+                                        <option value="${project.id}">${project.projectName}</option>
                                     </c:forEach>
                                 </select>
                             </div>
@@ -91,7 +91,7 @@
             </div><!--/span-->
         </div><!--/row-->
     </div><!--/fluid-row-->
-
+<s:debug></s:debug>
 </div><!--/.fluid-container-->
 <!-- jQuery -->
 <script src="js/jquery-1.7.2.min.js"></script>
