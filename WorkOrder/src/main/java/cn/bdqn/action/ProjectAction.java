@@ -12,7 +12,25 @@ import java.util.List;
  */
 public class ProjectAction extends ActionSupport {
     private ProjectService projectService;
+    private  Project project;
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
+
     List<Project> list=new ArrayList<Project>();
+
+    public List<Project> getList() {
+        return list;
+    }
+
+    public void setList(List<Project> list) {
+        this.list = list;
+    }
 
     public ProjectService getProjectService() {
         return projectService;
@@ -24,6 +42,7 @@ public class ProjectAction extends ActionSupport {
 
     public String findList(){
        list= projectService.findList();
+        System.out.println(list);
        return SUCCESS;
     }
 

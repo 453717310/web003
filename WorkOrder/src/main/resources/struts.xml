@@ -5,10 +5,15 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+    <constant name="struts.devMode" value="true"/>
     <package name="default" namespace="/" extends="struts-default">
         <!--每次请求都会实例化一个对象 需要让spring容器去处理-->
-        <action name="project" class="projectAction" method="findList">
-            <result>/findProject.jsp</result>
+        <action name="findProject" class="projectAction" method="findList">
+            <result name="success">/findList.jsp</result>
+        </action>
+
+        <action name="addWorkorder" class="workorderAction" method="add">
+            <result name="success">/fingWorkorderList.jsp</result>
         </action>
     </package>
 </struts>

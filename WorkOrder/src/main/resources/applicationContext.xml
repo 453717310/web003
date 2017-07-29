@@ -34,6 +34,7 @@
         </property>
         <property name="hibernateProperties">
             <props>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
                 <prop key="dialect">org.hibernate.dialect.Oracle10gDialect</prop>
                 <prop key="show_sql">true</prop>
                 <prop key="format_sql">true</prop>
@@ -46,6 +47,7 @@
     <bean id="dao" class="cn.bdqn.dao.impl.BaseDaoImpl" p:sessionFactory-ref="sessionFactory"/>
     <!--配置service层-->
     <bean id="service" class="cn.bdqn.service.impl.ProjectServiceImpl" p:dao-ref="dao"/>
+    <bean id="workService" class="cn.bdqn.service.impl.WorkorderServiceImpl" p:workorderBaseDao-ref="dao"/>
     <!--01配置事务管理器-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"></property>
@@ -68,4 +70,9 @@
     <bean id="projectAction" class="cn.bdqn.action.ProjectAction" scope="prototype">
         <property name="projectService" ref="service"/>
     </bean>
+
+    <bean id="workorderAction" class="cn.bdqn.action.WorkorderAction" scope="prototype">
+        <property name="workorderService" ref="workService"/>
+    </bean>
+
 </beans>

@@ -27,6 +27,7 @@ public class News_detailServiceImpl implements News_detailService {
     }
 
     public void setDao(BaseDao<News_detail> dao) {
+
         this.dao = dao;
     }
 
