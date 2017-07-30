@@ -31,4 +31,9 @@ public interface BaseDao<T> {
      * @return
      */
     List<T> findList(String hql);
+
+    List<T> findList(String hql,Integer pageIndex,Integer pageSize);
+
+    long findCount(String hql);
+
 }

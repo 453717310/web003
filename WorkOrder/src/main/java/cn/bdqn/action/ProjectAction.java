@@ -45,6 +45,8 @@ public class ProjectAction extends ActionSupport {
         System.out.println(list);
        return SUCCESS;
     }
-
+    public String temp(){
+        return SUCCESS;
+    }
 
 }

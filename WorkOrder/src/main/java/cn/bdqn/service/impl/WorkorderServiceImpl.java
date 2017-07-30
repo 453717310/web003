@@ -22,8 +22,15 @@ public class WorkorderServiceImpl implements WorkorderService {
     }
 
     @Override
-    public void add(Workorder workorder) {
-        workorderBaseDao.add(workorder);
+    public boolean add(Workorder workorder) {
+
+        try {
+            workorderBaseDao.add(workorder);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     @Override
@@ -37,7 +44,15 @@ public class WorkorderServiceImpl implements WorkorderService {
     }
 
     @Override
-    public List<Workorder> findList() {
-        return workorderBaseDao.findList("from Workorder");
+    public List<Workorder> findList(Integer pageSize, Integer pageIndex, Integer id) {
+        pageIndex=(pageIndex-1)*pageSize;
+        workorderBaseDao.findList("from Workorder w where w.projectId="+id,pageIndex,pageSize);
+        return null;
+    }
+
+    @Override
+    public Integer findCount(Integer id) {
+        return  (int) workorderBaseDao.findCount(
+                "select count(w.id) Workorder w where w.id="+id);
     }
 }

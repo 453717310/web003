@@ -14,5 +14,7 @@ public interface WorkorderService extends SuperService<Workorder> {
      * 查询所有项目
      * @return
      */
-    List<Workorder> findList();
+    List<Workorder> findList(Integer pageSize,Integer pageIndex,Integer id);
+
+    Integer findCount(Integer id);
 }

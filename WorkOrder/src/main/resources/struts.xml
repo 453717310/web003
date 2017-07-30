@@ -13,9 +13,8 @@
         <action name="addWorkorder" class="workorderAction" method="add">
             <result name="success">/fingWorkorderList.jsp</result>
         </action>
-        <action name="tempWork" class="workorderAction" method="temp">
-            <result name="success">/addWorkorder.jsp</result>
-        </action>
+
     </package>
     <include file="project.xml"></include>
+
 </struts>

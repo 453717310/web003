@@ -9,7 +9,7 @@ public interface SuperService<T> {
      * 添加
      * @param t
      */
-    void add(T t);
+    boolean add(T t);
 
     /**
      * 删除
@@ -22,4 +22,8 @@ public interface SuperService<T> {
      * @param t
      */
     void update(T t);
+
+
+
+
 }

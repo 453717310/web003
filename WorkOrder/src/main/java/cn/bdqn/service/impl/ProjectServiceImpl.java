@@ -26,8 +26,16 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public void add(Project project) {
-        dao.add(project);
+    public boolean add(Project project) {
+
+        try {
+            dao.add(project);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+
     }
 
     @Override

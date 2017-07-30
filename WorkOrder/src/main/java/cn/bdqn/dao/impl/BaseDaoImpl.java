@@ -49,4 +49,16 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     public List<T> findList(String hql) {
         return  sessionFactory.getCurrentSession().createQuery(hql).list();
     }
+
+    @Override
+    public List<T> findList(String hql, Integer pageIndex, Integer pageSize) {
+        return getCurrentSession().createQuery(hql).setFirstResult(pageIndex)
+                .setMaxResults(pageSize).list();
+    }
+
+    @Override
+    public long findCount(String hql) {
+
+        return (Long) getCurrentSession().createQuery(hql).uniqueResult();
+    }
 }
